@@ -30,7 +30,7 @@ export const Layout = () => {
             </div>
             <div className="flex-2 p-4">
               <div className="flex-col flex gap-5">
-                {!user && <Profile />}
+                <Profile user={user}/>
               </div>
             </div>
         </Container>

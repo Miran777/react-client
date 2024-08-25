@@ -10,6 +10,7 @@ export const Following = () => {
   const currentUser = useSelector(selectCurrent)
   const { id } = useParams<{ id: string }>()
   const { data } = useGetUserByIdQuery(id ?? "")
+  
   if (!data) {
     return null
   }

@@ -121,7 +121,9 @@ export const Card: React.FC<Props> = ({
       if (cardFor === 'current-post') {
         await triggerGetPostById(id).unwrap()
       }
-      else refetchPosts()
+      if (cardFor === 'post') {
+        refetchPosts()
+      }
     } catch (error) {
       if (hasErrorField(error)) {
         setError(error.data.error)

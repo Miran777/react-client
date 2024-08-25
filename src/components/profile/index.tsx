@@ -5,11 +5,13 @@ import { Card, CardBody, CardHeader, Image } from '@nextui-org/react'
 import { BASE_URL } from '../../constans'
 import { Link } from 'react-router-dom'
 import { MdAlternateEmail } from 'react-icons/md'
+import { User } from '../../app/types'
 
-export const Profile = () => {
+export const Profile = ({ user }: { user: User | null}) => {
     const current = useSelector(selectCurrent)
+    
 
-    if (!current) {
+    if (!current || !user) {
         return null
     }
 
